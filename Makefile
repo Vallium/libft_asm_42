@@ -14,7 +14,8 @@ STATIC_LIB	= libfts.a
 DEBUG_LIB	= libfts_debug.a
 DYNAMIC_LIB	= libfts.so
 
-SRC			= ft_isdigit.s
+SRC			=	ft_isdigit.s		\
+				ft_isascii.s
 
 DYNAMIC_OBJ	= $(patsubst %.s,$(DYNAMIC_DIR)/%.o,$(SRC))
 STATIC_OBJ	= $(patsubst %.s,$(STATIC_DIR)/%.o,$(SRC))
