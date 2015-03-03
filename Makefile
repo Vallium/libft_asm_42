@@ -17,6 +17,7 @@ DYNAMIC_LIB	= libfts.so
 SRC			=	ft_isdigit.s		\
 				ft_isascii.s		\
 				ft_isprint.s		\
+				ft_isalpha.s
 
 DYNAMIC_OBJ	= $(patsubst %.s,$(DYNAMIC_DIR)/%.o,$(SRC))
 STATIC_OBJ	= $(patsubst %.s,$(STATIC_DIR)/%.o,$(SRC))
@@ -44,7 +45,9 @@ $(shell mkdir -p $(STATIC_DIR) $(DYNAMIC_DIR) $(DEBUG_DIR))
 
 all: $(STATIC_LIB)
 
-debug : $(DEBUG_LIB) # $(DYNAMIC_LIB)
+debug : $(DEBUG_LIB)
+
+# dynamic : $(DYNAMIC_LIB)
 
 $(STATIC_LIB): $(STATIC_OBJ)
 	ar rc $@ $(STATIC_OBJ)
@@ -54,17 +57,17 @@ $(DEBUG_LIB): $(DEBUG_OBJ)
 	ar rc $@ $(DEBUG_OBJ)
 	ranlib $@
 
-#$(DYNAMIC_LIB): $(DYNAMIC_OBJ)
-#	$(CC) -O3 -shared -o $@ $(DYNAMIC_OBJ)
+# $(DYNAMIC_LIB): $(DYNAMIC_OBJ)
+# 	$(CC) -O3 -shared -o $@ $(DYNAMIC_OBJ)
 
 $(STATIC_DIR)/%.o: $(SRC_DIR)/%.s
 	$(NASM) -I $(HEAD_DIR) -o $@ $< # $(FLAGS)
 
-$(DEBUG_DIR)/%.o: $(SRC_DIR)/%.c
-	$(NASM) -I $(HEAD_DIR) -o $@ $< $(FLAGS) -g
+$(DEBUG_DIR)/%.o: $(SRC_DIR)/%.s
+	$(NASM) -I $(HEAD_DIR) -o $@ $< -g # $(FLAGS) -g
 
-#$(DYNAMIC_DIR)/%.o: $(SRC_DIR)/%.c
-#	$(CC) -O3 -fPIC -I $(HEAD_DIR) -o $@ -c $< $(FLAGS)
+# $(DYNAMIC_DIR)/%.o: $(SRC_DIR)/%.s
+# 	$(NASM) -fPIC -I $(HEAD_DIR) -o $@ -c $< # $(FLAGS)
 
 .PHONY: clean fclean re norme
 
