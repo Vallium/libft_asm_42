@@ -2,11 +2,11 @@ global	_ft_isdigit
 
 section	.text
 
-_ft_isaplpha:
-	cmp		rdi, 0x30
+_ft_isdigit:
+	cmp		rdi, '0'
 	jl		_retz
-	cmp		rdi, 0x39
-	jo		_retz
+	cmp		rdi, '9'
+	jg		_retz
 
 _reto:
 	mov		rax, 1
