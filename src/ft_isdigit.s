@@ -1,11 +1,17 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    ft_isdigit.s                                       :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: aalliot <aalliot@student.42.fr>            +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2015/03/02 18:43:49 by aalliot           #+#    #+#              #
-#    Updated: 2015/03/02 18:43:51 by aalliot          ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+global	_ft_isdigit
+
+section	.text
+
+_ft_isaplpha:
+	cmp		rdi, 0x30
+	jl		_retz
+	cmp		rdi, 0x39
+	jo		_retz
+
+_reto:
+	mov		rax, 1
+	ret
+
+_retz:
+	mov		rax, 0
+	ret

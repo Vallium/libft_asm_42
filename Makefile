@@ -14,7 +14,7 @@ STATIC_LIB	= libfts.a
 DEBUG_LIB	= libfts_debug.a
 DYNAMIC_LIB	= libfts.so
 
-SRC		=	ft_isdigit.s
+SRC			= ft_isdigit.s
 
 DYNAMIC_OBJ	= $(patsubst %.s,$(DYNAMIC_DIR)/%.o,$(SRC))
 STATIC_OBJ	= $(patsubst %.s,$(STATIC_DIR)/%.o,$(SRC))
@@ -37,9 +37,12 @@ ifeq ($(UNAME_S),Linux)
 else
 	FLAGS	= -Wall -Wextra -Werror
 endif
+
 $(shell mkdir -p $(STATIC_DIR) $(DYNAMIC_DIR) $(DEBUG_DIR))
 
-all: $(STATIC_LIB) $(DEBUG_LIB) # $(DYNAMIC_LIB)
+all: $(STATIC_LIB)
+
+debug : $(DEBUG_LIB) # $(DYNAMIC_LIB)
 
 $(STATIC_LIB): $(STATIC_OBJ)
 	ar rc $@ $(STATIC_OBJ)
@@ -53,7 +56,7 @@ $(DEBUG_LIB): $(DEBUG_OBJ)
 #	$(CC) -O3 -shared -o $@ $(DYNAMIC_OBJ)
 
 $(STATIC_DIR)/%.o: $(SRC_DIR)/%.s
-	$(NASM) -I $(HEAD_DIR) -o $@ $< $(FLAGS)
+	$(NASM) -I $(HEAD_DIR) -o $@ $< # $(FLAGS)
 
 $(DEBUG_DIR)/%.o: $(SRC_DIR)/%.c
 	$(NASM) -I $(HEAD_DIR) -o $@ $< $(FLAGS) -g
