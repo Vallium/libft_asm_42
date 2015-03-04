@@ -6,12 +6,12 @@ global	_ft_puts
 section	.text
 
 _ft_puts:
-	mov		rcx, rdi
+	push	rdi
 	call	_ft_strlen
 
 	mov		rdx, rax
 	mov		rdi, 1
-	mov		rsi, rcx
+	pop		rsi
 	mov		rax, 0x00004
 
 	syscall
