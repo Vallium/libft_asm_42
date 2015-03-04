@@ -1,7 +1,7 @@
 ;int		ft_puts(const char *str)
 
-extern	_ft_strlen
 global	_ft_puts
+extern	_ft_strlen
 
 section	.text
 
@@ -12,7 +12,7 @@ _ft_puts:
 	mov		rdx, rax
 	mov		rdi, 1
 	pop		rsi
-	mov		rax, 0x00004
+	mov		rax, 0x2000004
 
 	syscall
 
