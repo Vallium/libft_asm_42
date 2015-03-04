@@ -17,5 +17,12 @@ _ft_puts:
 	syscall
 
 	push	10
-	pop		rax
+	mov rsi, rsp
+	mov rdi, 1
+	mov rdx, 1
+	mov rax, 0x2000004
+
+	syscall
+
+	pop rax
 	ret
