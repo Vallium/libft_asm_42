@@ -12,15 +12,15 @@ _ft_puts:
 	mov		rdx, rax
 	mov		rdi, 1
 	pop		rsi
-	mov		rax, 0x2000004
+	mov		rax, 0x2000004		;call write
 
 	syscall
 
 	push	10
-	mov rsi, rsp
-	mov rdi, 1
-	mov rdx, 1
-	mov rax, 0x2000004
+	mov		rsi, rsp
+	mov		rdi, 1
+	mov		rdx, 1
+	mov		rax, 0x2000004		;call write
 
 	syscall
 
