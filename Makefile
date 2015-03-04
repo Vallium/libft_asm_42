@@ -6,7 +6,7 @@
 #    By: aalliot <aalliot@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/10 11:30:22 by aalliot           #+#    #+#              #
-#    Updated: 2015/03/02 18:31:45 by aalliot          ###   ########.fr        #
+#*   Updated: 2015/03/04 18:23:52 by aalliot          ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,7 @@ STATIC_DIR	= static
 DYNAMIC_DIR	= dynamic
 
 CC			= gcc
-NASM		= ~/.brew/bin/nasm -f macho64
+NASM		= nasm -f macho64 # ~/.brew/bin/nasm -f macho64
 NORMINETTE	= ~/project/colorminette/colorminette
 
 UNAME_S := $(shell uname -s)

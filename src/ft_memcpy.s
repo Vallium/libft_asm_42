@@ -6,18 +6,19 @@ section	.text
 
 _ft_memcpy:
 	push	rdi
-	push	rsi
+	;push	rsi
 
 _cpy:
 	cmp		rdx, 0
 	je		_ret
-
+	
 	movsb
 	dec		rdx
 	jmp		_cpy
 
 _ret:
-	pop		rsi
-	pop		rdi
-	mov		rax, rdi
+	;pop		rsi
+	;pop		rdi
+	;mov		rax, rdi
+	pop		rax
 	ret
