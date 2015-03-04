@@ -49,7 +49,7 @@ int					ft_toupper(int c);
 // void				ft_putnbr(int n);
 // void				ft_putnbrll(long long int n);
 // void				ft_putnbr_fd(int n, int fd);
-// void				ft_bzero(void *s, size_t n);
+void				ft_bzero(void *s, size_t n);
 // void				ft_memdel(void **ap);
 // void				ft_strdel(char **as);
 // void				ft_strclr(char *s);
