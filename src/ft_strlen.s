@@ -1,18 +1,16 @@
+;size_t				ft_strlen(const char *s);
+
 global	_ft_strlen
 
 section	.text
 
 _ft_strlen:
 	mov		rax, 0
+	mov		rcx, -1
 
-_ft_w_strlen:
-	cmp		byte[rdi], 0
-	je		_ret
+	cld
+	repnz	scasb
 
-	inc		rax
-	inc		rdi
-
-	jmp		_ft_w_strlen
-
-_ret:
+	not		rcx
+	lea		rax, [rcx - 1]
 	ret

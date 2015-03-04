@@ -1,3 +1,5 @@
+;int					ft_toupper(int c);
+
 global	_ft_toupper
 
 section	.text

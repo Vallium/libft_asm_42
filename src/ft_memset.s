@@ -1,8 +1,8 @@
+;void				*ft_memset(void *b, int c, size_t len);
+
 global	_ft_memset
 
 section	.text
-
-;void				*ft_memset(void *b, int c, size_t len);
 
 _ft_memset:
 	push	rdi

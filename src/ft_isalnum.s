@@ -1,3 +1,5 @@
+;int					ft_isalnum(int c);
+
 global	_ft_isalnum
 
 section	.text

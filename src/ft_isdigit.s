@@ -1,3 +1,5 @@
+;int					ft_isdigit(int c)
+
 global	_ft_isdigit
 
 section	.text

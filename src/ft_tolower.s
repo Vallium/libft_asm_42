@@ -1,3 +1,5 @@
+;int					ft_tolower(int c);
+
 global	_ft_tolower
 
 section	.text

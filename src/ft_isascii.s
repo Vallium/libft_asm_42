@@ -1,3 +1,5 @@
+;int					ft_isascii(int c);
+
 global	_ft_isascii
 
 section	.text

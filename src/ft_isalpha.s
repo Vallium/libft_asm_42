@@ -1,3 +1,5 @@
+;int					ft_isalpha(int c);
+
 global	_ft_isalpha
 
 section	.text
