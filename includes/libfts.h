@@ -101,7 +101,7 @@ void				ft_bzero(void *s, size_t n);
 // char				*ft_burger(const char *s1, char c, const char *s2);
 // void				ft_kebab(char *buff, const char *first, ...);
 // char				**ft_strsplit(const char *s, char c);
-// size_t				ft_strlen(const char *s);
+size_t				ft_strlen(const char *s);
 // size_t				ft_strlcat(char *dst, const char *src, size_t size);
 // t_list				*ft_lstnew(const void *content, size_t content_size);
 

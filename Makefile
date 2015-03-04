@@ -21,7 +21,8 @@ SRC			=	ft_isdigit.s		\
 				ft_isalnum.s		\
 				ft_tolower.s		\
 				ft_toupper.s		\
-				ft_bzero.s
+				ft_bzero.s			\
+				ft_strlen.s			\
 
 DYNAMIC_OBJ	= $(patsubst %.s,$(DYNAMIC_DIR)/%.o,$(SRC))
 STATIC_OBJ	= $(patsubst %.s,$(STATIC_DIR)/%.o,$(SRC))
