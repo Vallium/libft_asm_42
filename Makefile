@@ -25,7 +25,8 @@ SRC			=	ft_isdigit.s		\
 				ft_strlen.s			\
 				ft_strcat.s			\
 				ft_memcpy.s			\
-				ft_memset.s
+				ft_memset.s			\
+				ft_puts.s
 
 DYNAMIC_OBJ	= $(patsubst %.s,$(DYNAMIC_DIR)/%.o,$(SRC))
 STATIC_OBJ	= $(patsubst %.s,$(STATIC_DIR)/%.o,$(SRC))

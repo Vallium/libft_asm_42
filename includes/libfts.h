@@ -29,6 +29,8 @@ int					ft_isdigit(int c);
 int					ft_isprint(int c);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
+
+int					ft_puts(const char *str);
 //
 // int					ft_intlen(int i);
 // int					ft_llilen(long long int i);
