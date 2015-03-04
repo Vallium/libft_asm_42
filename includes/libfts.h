@@ -81,7 +81,7 @@ void				ft_bzero(void *s, size_t n);
 // void				*ft_memchr(const void *s, int c, size_t n);
 // void				*ft_memalloc(size_t size);
 //
-// char				*ft_strcat(char *s1, const char *s2);
+char				*ft_strcat(char *s1, const char *s2);
 // char				*ft_strncat(char *s1, const char *s2, size_t n);
 // char				*ft_strcpy(char *dst, const char *src);
 // char				*ft_strdup(const char *s1);
