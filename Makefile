@@ -40,7 +40,7 @@ STATIC_DIR	= static
 DYNAMIC_DIR	= dynamic
 
 CC			= gcc
-NASM		= nasm -f macho64 # ~/.brew/bin/nasm -f macho64
+NASM		= ~/.brew/bin/nasm -f macho64 # nasm -f macho64 
 NORMINETTE	= ~/project/colorminette/colorminette
 
 UNAME_S := $(shell uname -s)
