@@ -45,7 +45,7 @@ int					ft_puts_fd(const char *str, int fd);
 // void				ft_putchar(char c);
 // void				ft_putchar_fd(char c, int fd);
 void				ft_putstr(const char *s);
-// void				ft_putstr_fd(const char *s, int fd);
+void				ft_putstr_fd(const char *s, int fd);
 // void				ft_putstr_sub(char *str, int start, int l);
 // void				ft_putendl(const char *s);
 // void				ft_putendl_fd(const char *s, int fd);
