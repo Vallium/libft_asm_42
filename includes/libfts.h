@@ -31,6 +31,7 @@ int					ft_tolower(int c);
 int					ft_toupper(int c);
 
 int					ft_puts(const char *str);
+int					ft_puts_fd(const char *str, int fd);
 //
 // int					ft_intlen(int i);
 // int					ft_llilen(long long int i);
