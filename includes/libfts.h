@@ -42,7 +42,7 @@ int					ft_puts_fd(const char *str, int fd);
 // int					ft_memcmp(const void *s1, const void *s2, size_t n);
 // int					ft_strequ(const char *s1, const char *s2);
 // int					ft_strnequ(const char *s1, const char *s2, size_t n);
-// void				ft_putchar(char c);
+void				ft_putchar(char c);
 // void				ft_putchar_fd(char c, int fd);
 void				ft_putstr(const char *s);
 void				ft_putstr_fd(const char *s, int fd);
