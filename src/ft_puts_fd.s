@@ -1,5 +1,8 @@
 ;int		ft_puts_fd(const char *str, int fd)
 
+%define M_SCALL(nb)			0x2000000 | nb
+%define WRITE				4
+
 global	_ft_puts_fd
 extern	_ft_strlen
 
@@ -12,14 +15,14 @@ _ft_puts_fd:
 	mov		rdx, rax
 	mov		rdi, rsi
 	pop		rsi
-	mov		rax, 0x2000004		;call write
+	mov		rax, M_SCALL(WRITE)
 
 	syscall
 
 	push	10
 	mov		rsi, rsp
 	mov		rdx, 1
-	mov		rax, 0x2000004		;call write
+	mov		rax, M_SCALL(WRITE)
 
 	syscall
 
