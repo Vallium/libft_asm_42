@@ -21,5 +21,3 @@ _ft_strdup:
 	call	_ft_memcpy
 
 	ret
-
-_strcpy:

@@ -43,7 +43,7 @@ int					ft_puts(const char *str);
 // int					ft_strnequ(const char *s1, const char *s2, size_t n);
 // void				ft_putchar(char c);
 // void				ft_putchar_fd(char c, int fd);
-// void				ft_putstr(const char *s);
+void				ft_putstr(const char *s);
 // void				ft_putstr_fd(const char *s, int fd);
 // void				ft_putstr_sub(char *str, int start, int l);
 // void				ft_putendl(const char *s);

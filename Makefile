@@ -12,7 +12,7 @@
 
 STATIC_LIB	= libfts.a
 DEBUG_LIB	= libfts_debug.a
-DYNAMIC_LIB	= libfts.so
+# DYNAMIC_LIB	= libfts.so
 
 SRC			=	ft_isdigit.s		\
 				ft_isascii.s		\
@@ -27,7 +27,8 @@ SRC			=	ft_isdigit.s		\
 				ft_memcpy.s			\
 				ft_memset.s			\
 				ft_puts.s			\
-				ft_strdup.s
+				ft_strdup.s			\
+				ft_putstr.s
 
 DYNAMIC_OBJ	= $(patsubst %.s,$(DYNAMIC_DIR)/%.o,$(SRC))
 STATIC_OBJ	= $(patsubst %.s,$(STATIC_DIR)/%.o,$(SRC))
@@ -40,7 +41,7 @@ STATIC_DIR	= static
 DYNAMIC_DIR	= dynamic
 
 CC			= gcc
-NASM		= nasm -f macho64 # ~/.brew/bin/nasm -f macho64 #  
+NASM		= ~/.brew/bin/nasm -f macho64 # nasm -f macho64 #
 NORMINETTE	= ~/project/colorminette/colorminette
 
 UNAME_S := $(shell uname -s)
@@ -51,7 +52,7 @@ else
 	FLAGS	= -Wall -Wextra -Werror
 endif
 
-$(shell mkdir -p $(STATIC_DIR) $(DYNAMIC_DIR) $(DEBUG_DIR))
+$(shell mkdir -p $(STATIC_DIR) $(DEBUG_DIR)) # $(DYNAMIC_DIR))
 
 all: $(STATIC_LIB)
 
