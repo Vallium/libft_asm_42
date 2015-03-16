@@ -92,7 +92,7 @@ char				*ft_strcat(char *s1, const char *s2);
 // char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strdup(const char *s1);
 // char				*ft_strncpy(char *dst, const char *src, size_t n);
-// char				*ft_strchr(const char *s, int c);
+char				*ft_strchr(const char *s, int c);
 // char				*ft_strrchr(const char *s, int c);
 // char				*ft_strstr(const char *s1, const char *s2);
 // char				*ft_strnstr(const char *s1, const char *s2, size_t n);
@@ -108,6 +108,7 @@ char				*ft_strdup(const char *s1);
 // void				ft_kebab(char *buff, const char *first, ...);
 // char				**ft_strsplit(const char *s, char c);
 size_t				ft_strlen(const char *s);
+int					ft_isspace(int c);
 // size_t				ft_strlcat(char *dst, const char *src, size_t size);
 // t_list				*ft_lstnew(const void *content, size_t content_size);
 

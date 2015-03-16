@@ -9,6 +9,9 @@ extern	_ft_strlen
 section	.text
 
 _ft_puts_fd:
+	cmp		rdi, 0x0
+	je		_ret
+
 	push	rdi
 	call	_ft_strlen
 
@@ -27,4 +30,6 @@ _ft_puts_fd:
 	syscall
 
 	pop rax
+
+_ret
 	ret

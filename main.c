@@ -40,9 +40,10 @@ void		check_bzero(void)
 
 void		check_strcat(void)
 {
-	char		str[5];
+	char		str[7];
 
 	str[0] = '\0';
+	bzero(str, 7);
 	printf("[------] FT_STRCAT [------]\n");
 	printf("[+] Str init with empy char : %s [+]\n", ft_strcat(str, ""));
 	printf("[+] Str: %s [+]\n", ft_strcat(str, "h"));
@@ -257,22 +258,22 @@ void		check_cat(void)
 
 // /* BONUS */
 //
-// void		check_isspace(void)
-// {
-// 	printf("[------] FT_ISSPACE [------]\n");
-// 	printf("[+] Test on %c, return = %d [+]\n", 'a', ft_isspace('a'));
-// 	printf("[+] Test on %c, return = %d [+]\n", 'Z', ft_isspace('Z'));
-// 	printf("[+] Test on %c, return = %d [+]\n", '*', ft_isspace('*'));
-// 	printf("[+] Test on %c, return = %d [+]\n", ' ', ft_isspace(' '));
-// 	printf("[+] Test on \\n, return = %d [+]\n", ft_isspace('\n'));
-// 	printf("[+] Test on \\t, return = %d [+]\n", ft_isspace('\t'));
-// 	printf("[+] Test on \\v, return = %d [+]\n", ft_isspace('\v'));
-// 	printf("[+] Test on \\f, return = %d [+]\n", ft_isspace('\f'));
-// 	printf("[+] Test on \\r, return = %d [+]\n", ft_isspace('\r'));
-// 	printf("[-] Test with NULL [-]\n");
-// 	printf("[+] Test return = %d [+]\n", ft_isspace(0));
-// 	printf("[------] END OF FT_ISSPACE [------]\n");
-// }
+void		check_isspace(void)
+{
+	printf("[------] FT_ISSPACE [------]\n");
+	printf("[+] Test on %c, return = %d [+]\n", 'a', ft_isspace('a'));
+	printf("[+] Test on %c, return = %d [+]\n", 'Z', ft_isspace('Z'));
+	printf("[+] Test on %c, return = %d [+]\n", '*', ft_isspace('*'));
+	printf("[+] Test on %c, return = %d [+]\n", ' ', ft_isspace(' '));
+	printf("[+] Test on \\n, return = %d [+]\n", ft_isspace('\n'));
+	printf("[+] Test on \\t, return = %d [+]\n", ft_isspace('\t'));
+	printf("[+] Test on \\v, return = %d [+]\n", ft_isspace('\v'));
+	printf("[+] Test on \\f, return = %d [+]\n", ft_isspace('\f'));
+	printf("[+] Test on \\r, return = %d [+]\n", ft_isspace('\r'));
+	printf("[-] Test with NULL [-]\n");
+	printf("[+] Test return = %d [+]\n", ft_isspace(0));
+	printf("[------] END OF FT_ISSPACE [------]\n");
+}
 //
 // void		check_abs(void)
 // {
@@ -366,6 +367,49 @@ void		check_putchar_fd(void)
 	printf("[------] END OF FT_PUTCHAR_FD [------]\n");
 }
 
+void		check_puts_fd(void)
+{
+	printf("[------] FT_PUTS_FD [------]\n");
+	ft_puts_fd("[+] a [+]", 1);
+	ft_puts_fd("[+] $#@#',./,~!@~=+ [+]", 1);
+	printf("[-] Test with null [-]\n");
+	ft_puts_fd(NULL, 1);
+	printf("[------] END OF FT_PUTS_FD [------]\n");
+}
+
+void		check_putstr(void)
+{
+	printf("[------] FT_PUTSTR [------]\n");
+	ft_putstr("[+] a [+]\n");
+	ft_putstr("[+] $#@#',./,~!@~=+ [+]\n");
+	printf("[-] Test with null [-]\n");
+	ft_putstr(NULL);
+	printf("[------] END OF FT_PUTSTR [------]\n");
+}
+
+void		check_putstr_fd(void)
+{
+	printf("[------] FT_PUTSTR_FD [------]\n");
+	ft_putstr_fd("[+] a [+]\n", 1);
+	ft_putstr_fd("[+] $#@#',./,~!@~=+ [+]\n", 1);
+	printf("[-] Test with null [-]\n");
+	ft_putstr_fd(NULL, 1);
+	printf("[------] END OF FT_PUTSTR_FD [------]\n");
+}
+
+void		check_strchr(void)
+{
+	char	*str;
+
+	str = ft_strdup("Salut");
+	printf("[------] FT_STRCHR [------]\n");
+	printf("     Ret => %p\n", ft_strchr(str, 'a'));
+	printf("Doit Ret => %p\n", strchr(str, 'a'));
+	printf("[-] Test with null [-]\n");
+	ft_putstr_fd(NULL, 1);
+	printf("[------] END OF FT_STRCHR [------]\n");
+}
+
 int			main(void)
 {
 	//PART 1
@@ -413,8 +457,16 @@ int			main(void)
 	printf("\n");
 	check_putchar_fd();
 	printf("\n");
-	// check_isspace();
-	// printf("\n");
+	check_puts_fd();
+	printf("\n");
+	check_putstr();
+	printf("\n");
+	check_putstr_fd();
+	printf("\n");
+	check_strchr();
+	printf("\n");
+	check_isspace();
+	printf("\n");
 	// check_abs();
 	// printf("\n");
 	// check_min();

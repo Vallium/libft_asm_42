@@ -33,7 +33,9 @@ SRC			=	ft_isdigit.s		\
 				ft_putstr_fd.s		\
 				ft_putchar.s		\
 				ft_putchar_fd.s		\
-				ft_cat.s
+				ft_cat.s			\
+				ft_strchr.s			\
+				ft_isspace.s
 
 DYNAMIC_OBJ	= $(patsubst %.s,$(DYNAMIC_DIR)/%.o,$(SRC))
 STATIC_OBJ	= $(patsubst %.s,$(STATIC_DIR)/%.o,$(SRC))
