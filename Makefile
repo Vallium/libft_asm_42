@@ -88,7 +88,8 @@ $(DEBUG_DIR)/%.o: $(SRC_DIR)/%.s
 .PHONY: clean fclean re norme
 
 bin: all
-	gcc -o ASM_test main.c $(STATIC_LIB)
+	@gcc -Wl,-no_pie -o ASM_test main.c $(STATIC_LIB)
+	@echo "ASM_test compiled!"
 
 norme:
 	@$(NORMINETTE) $(SRC_DIR)/ $(HEAD_DIR)/

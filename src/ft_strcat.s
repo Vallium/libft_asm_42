@@ -6,6 +6,9 @@ section	.text
 
 _ft_strcat:
 	push	rdi
+	push	rsi
+	cmp		rsi, 0x0
+	je		_ret
 
 _s1:
 	cmp		byte[rdi], 0x0
@@ -22,5 +25,6 @@ _s2:
 	jmp		_s2
 
 _ret:
+	pop		rsi
 	pop		rax
 	ret
