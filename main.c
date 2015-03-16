@@ -313,37 +313,37 @@ void		check_isspace(void)
 // 	printf("[------] END OF FT_MIN [------]\n");
 // }
 //
-// void		check_isupper(void)
-// {
-// 	printf("[------] FT_ISUPPER [------]\n");
-// 	printf("[+] Test on %c, return = %d [+]\n", 'a', ft_isupper('a'));
-// 	printf("[+] Test on %c, return = %d [+]\n", 'z', ft_isupper('z'));
-// 	printf("[+] Test on %c, return = %d [+]\n", '*', ft_isupper('*'));
-// 	printf("[+] Test on %c, return = %d [+]\n", 'Z', ft_isupper('Z'));
-// 	printf("[+] Test on %c, return = %d [+]\n", 'A', ft_isupper('A'));
-// 	printf("[+] Test on %c, return = %d [+]\n", '0', ft_isupper('0'));
-// 	printf("[+] Test on %c, return = %d [+]\n", '9', ft_isupper('9'));
-// 	printf("[+] Test on %c, return = %d [+]\n", '4', ft_isupper('4'));
-// 	printf("[-] Test with NULL [-]\n");
-// 	printf("[+] Test return = %d [+]\n", ft_isupper(0));
-// 	printf("[------] END OF FT_ISUPPER [------]\n");
-// }
-//
-// void		check_islower(void)
-// {
-// 	printf("[------] FT_ISLOWER [------]\n");
-// 	printf("[+] Test on %c, return = %d [+]\n", 'a', ft_islower('a'));
-// 	printf("[+] Test on %c, return = %d [+]\n", 'z', ft_islower('z'));
-// 	printf("[+] Test on %c, return = %d [+]\n", '*', ft_islower('*'));
-// 	printf("[+] Test on %c, return = %d [+]\n", 'Z', ft_islower('Z'));
-// 	printf("[+] Test on %c, return = %d [+]\n", 'A', ft_islower('A'));
-// 	printf("[+] Test on %c, return = %d [+]\n", '0', ft_islower('0'));
-// 	printf("[+] Test on %c, return = %d [+]\n", '9', ft_islower('9'));
-// 	printf("[+] Test on %c, return = %d [+]\n", '4', ft_islower('4'));
-// 	printf("[-] Test with NULL [-]\n");
-// 	printf("[+] Test return = %d [+]\n", ft_islower(0));
-// 	printf("[------] END OF FT_ISLOWER [------]\n");
-// }
+void		check_isupper(void)
+{
+	printf("[------] FT_ISUPPER [------]\n");
+	printf("[+] Test on %c, return = %d [+]\n", 'a', ft_isupper('a'));
+	printf("[+] Test on %c, return = %d [+]\n", 'z', ft_isupper('z'));
+	printf("[+] Test on %c, return = %d [+]\n", '*', ft_isupper('*'));
+	printf("[+] Test on %c, return = %d [+]\n", 'Z', ft_isupper('Z'));
+	printf("[+] Test on %c, return = %d [+]\n", 'A', ft_isupper('A'));
+	printf("[+] Test on %c, return = %d [+]\n", '0', ft_isupper('0'));
+	printf("[+] Test on %c, return = %d [+]\n", '9', ft_isupper('9'));
+	printf("[+] Test on %c, return = %d [+]\n", '4', ft_isupper('4'));
+	printf("[-] Test with NULL [-]\n");
+	printf("[+] Test return = %d [+]\n", ft_isupper(0));
+	printf("[------] END OF FT_ISUPPER [------]\n");
+}
+
+void		check_islower(void)
+{
+	printf("[------] FT_ISLOWER [------]\n");
+	printf("[+] Test on %c, return = %d [+]\n", 'a', ft_islower('a'));
+	printf("[+] Test on %c, return = %d [+]\n", 'z', ft_islower('z'));
+	printf("[+] Test on %c, return = %d [+]\n", '*', ft_islower('*'));
+	printf("[+] Test on %c, return = %d [+]\n", 'Z', ft_islower('Z'));
+	printf("[+] Test on %c, return = %d [+]\n", 'A', ft_islower('A'));
+	printf("[+] Test on %c, return = %d [+]\n", '0', ft_islower('0'));
+	printf("[+] Test on %c, return = %d [+]\n", '9', ft_islower('9'));
+	printf("[+] Test on %c, return = %d [+]\n", '4', ft_islower('4'));
+	printf("[-] Test with NULL [-]\n");
+	printf("[+] Test return = %d [+]\n", ft_islower(0));
+	printf("[------] END OF FT_ISLOWER [------]\n");
+}
 
 void		check_putchar(void)
 {
@@ -358,23 +358,23 @@ void		check_putchar(void)
 
 void		check_putchar_fd(void)
 {
-	printf("[------] FT_PUTCHAR_FD [------]\n");
-	ft_putchar_fd('a', 1);
-	ft_putchar_fd('\n', 1);
-	ft_putchar_fd('b', 1);
-	printf("\nDoit afficher : a\\nb\n");
+	dprintf(2, "[------] FT_PUTCHAR_FD [------]\n");
+	ft_putchar_fd('a', 2);
+	ft_putchar_fd('\n', 2);
+	ft_putchar_fd('b', 2);
+	dprintf(2, "\nDoit afficher : a\\nb\n");
 
-	printf("[------] END OF FT_PUTCHAR_FD [------]\n");
+	dprintf(2, "[------] END OF FT_PUTCHAR_FD [------]\n");
 }
 
 void		check_puts_fd(void)
 {
-	printf("[------] FT_PUTS_FD [------]\n");
-	ft_puts_fd("[+] a [+]", 1);
-	ft_puts_fd("[+] $#@#',./,~!@~=+ [+]", 1);
-	printf("[-] Test with null [-]\n");
-	ft_puts_fd(NULL, 1);
-	printf("[------] END OF FT_PUTS_FD [------]\n");
+	dprintf(2, "[------] FT_PUTS_FD [------]\n");
+	ft_puts_fd("[+] a [+]", 2);
+	ft_puts_fd("[+] $#@#',./,~!@~=+ [+]", 2);
+	dprintf(2, "[-] Test with null [-]\n");
+	ft_puts_fd(NULL, 2);
+	dprintf(2, "[------] END OF FT_PUTS_FD [------]\n");
 }
 
 void		check_putstr(void)
@@ -389,12 +389,12 @@ void		check_putstr(void)
 
 void		check_putstr_fd(void)
 {
-	printf("[------] FT_PUTSTR_FD [------]\n");
-	ft_putstr_fd("[+] a [+]\n", 1);
-	ft_putstr_fd("[+] $#@#',./,~!@~=+ [+]\n", 1);
-	printf("[-] Test with null [-]\n");
-	ft_putstr_fd(NULL, 1);
-	printf("[------] END OF FT_PUTSTR_FD [------]\n");
+	dprintf(2, "[------] FT_PUTSTR_FD [------]\n");
+	ft_putstr_fd("[+] a [+]\n", 2);
+	ft_putstr_fd("[+] $#@#',./,~!@~=+ [+]\n", 2);
+	dprintf(2, "[-] Test with null [-]\n");
+	ft_putstr_fd(NULL, 2);
+	dprintf(2, "[------] END OF FT_PUTSTR_FD [------]\n");
 }
 
 void		check_strchr(void)
@@ -467,16 +467,10 @@ int			main(void)
 	printf("\n");
 	check_isspace();
 	printf("\n");
-	// check_abs();
-	// printf("\n");
-	// check_min();
-	// printf("\n");
-	// check_max();
-	// printf("\n");
-	// check_isupper();
-	// printf("\n");
-	// check_islower();
-	// printf("\n");
+	check_isupper();
+	printf("\n");
+	check_islower();
+	printf("\n");
 
 	printf("[------] END OF TESTS [------] \n");
 	return 0;

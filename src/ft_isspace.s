@@ -1,3 +1,5 @@
+;int					ft_isspace(int c)
+
 section .text
 
 global _ft_isspace
