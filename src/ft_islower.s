@@ -5,15 +5,15 @@ section .text
 global	_ft_islower
 
 _ft_islower:
-		cmp		rdi, 'a'
-		jl		_retz
-		cmp		rdi, 'z'
-		jg		_retz
+	cmp		rdi, 'a'
+	jl		_retz
+	cmp		rdi, 'z'
+	jg		_retz
 
 _reto:
-		mov		rax, 1
-		ret
+	mov		rax, 1
+	ret
 
 _retz:
-		mov	rax, 0
-		ret
+	mov	rax, 0
+	ret

@@ -6,8 +6,12 @@ section	.text
 
 _ft_strlen:
 	cmp		rdi, 0x0
+	je		_ret_null
+
+_ft_strlen_cnt:
+	cmp		rdi, 0x0
 	je		_ret
-	mov		rax, 0
+	mov		rax, 0x0
 	mov		rcx, -1
 
 	cld
@@ -17,4 +21,8 @@ _ft_strlen:
 	lea		rax, [rcx - 1]
 
 _ret:
+	ret
+
+_ret_null:
+	mov		rax, 0x0
 	ret

@@ -3,20 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ide-vill <iris.devillars@gmail.com>        +#+  +:+       +#+        */
+/*   By: aalliot <aalliot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/06 16:42:20 by ide-vill          #+#    #+#             */
-/*   Updated: 2015/03/14 15:14:01 by ide-vill         ###   ########.fr       */
+/*   Created: 2015/03/16 19:19:02 by aalliot           #+#    #+#             */
+/*   Updated: 2015/03/16 19:19:05 by aalliot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/libfts.h"
-
-
 #include <stdio.h>
 #include <fcntl.h>
 #include <unistd.h>
-
 
 /* PART 1 */
 
@@ -128,6 +125,7 @@ void		check_isprint(void)
 	printf("[+] Test on %c : %d, return = %d [+]\n", ')', ')', ft_isprint(')'));
 	printf("[+] Test on %c : %d, return = %d [+]\n", '>', '>', ft_isprint('>'));
 	printf("[+] Test on %c : %d, return = %d [+]\n", '\\', '\\', ft_isprint('\\'));
+	printf("[+] Test on del: %d, return = %d [+]\n", 177, ft_isprint(177));
 	printf("[-] Test with NULL [-]\n");
 	printf("[+] Test return = %d [+]\n", ft_isprint(0));
 	printf("[------] END OF FT_ISPRINT [------]\n");
@@ -169,6 +167,8 @@ void		check_puts(void)
 {
 	printf("[------] FT_PUTS [------]\n");
 	ft_puts("[+] a [+]");
+	ft_puts("[+] Zaz suce des poneys [+]");
+	ft_puts("[+] Ou plutot, les poneys sucent Zaz [+]");
 	ft_puts("[+] $#@#',./,~!@~=+ [+]");
 	printf("[-] Test with null [-]\n");
 	ft_puts(NULL);
@@ -274,45 +274,7 @@ void		check_isspace(void)
 	printf("[+] Test return = %d [+]\n", ft_isspace(0));
 	printf("[------] END OF FT_ISSPACE [------]\n");
 }
-//
-// void		check_abs(void)
-// {
-// 	printf("[------] FT_ABS [-------]\n");
-// 	printf("[+] Test on %d, return = %d [+]\n", 0, ft_abs(0));
-// 	printf("[+] Test on %d, return = %d [+]\n", 1, ft_abs(1));
-// 	printf("[+] Test on %d, return = %d [+]\n", 10, ft_abs(10));
-// 	printf("[+] Test on %d, return = %d [+]\n", -1, ft_abs(-1));
-// 	printf("[+] Test on %d, return = %d [+]\n", -5, ft_abs(-5));
-// 	printf("[+] Test on %d, return = %d [+]\n", -20, ft_abs(-20));
-// 	printf("[-] Test with NULL [-]\n");
-// 	printf("[+] Test return = %d [+]\n", ft_abs(0));
-// 	printf("[------] END OF FT_ABS [------]\n");
-// }
-//
-// void		check_max(void)
-// {
-// 	printf("[------] FT_MAX [------]\n");
-// 	printf("[+] Test on [1, 2], return = %d [+]\n", ft_max(1, 2));
-// 	printf("[+] Test on [-3, 0], return = %d [+]\n", ft_max(-3, 0));
-// 	printf("[+] Test on [-15, -30], return = %d [+]\n", ft_max(-15, -30));
-// 	printf("[+] Test on [-5, -5], return = %d [+]\n", ft_max(-5, -5));
-// 	printf("[-] Test with NULL [-]\n");
-// 	printf("[+] Test return = %d [+]\n", ft_max(0, 0));
-// 	printf("[------] END OF FT_MAX [------]\n");
-// }
-//
-// void		check_min(void)
-// {
-// 	printf("[------] FT_MIN [------]\n");
-// 	printf("[+] Test on [1, 2], return = %d [+]\n", ft_min(1, 2));
-// 	printf("[+] Test on [-3, 3], return = %d [+]\n", ft_min(-3, 3));
-// 	printf("[+] Test on [-15, -30], return = %d [+]\n", ft_min(-30, -15));
-// 	printf("[+] Test on [-5, -5], return = %d [+]\n", ft_min(-5, -5));
-// 	printf("[-] Test with NULL [-]\n");
-// 	printf("[+] Test return = %d [+]\n", ft_min(0, 0));
-// 	printf("[------] END OF FT_MIN [------]\n");
-// }
-//
+
 void		check_isupper(void)
 {
 	printf("[------] FT_ISUPPER [------]\n");
@@ -371,6 +333,8 @@ void		check_puts_fd(void)
 {
 	dprintf(2, "[------] FT_PUTS_FD [------]\n");
 	ft_puts_fd("[+] a [+]", 2);
+	ft_puts("[+] Zaz suce des poneys [+]");
+	ft_puts("[+] Ou plutot, les poneys sucent Zaz [+]");
 	ft_puts_fd("[+] $#@#',./,~!@~=+ [+]", 2);
 	dprintf(2, "[-] Test with null [-]\n");
 	ft_puts_fd(NULL, 2);
@@ -381,6 +345,8 @@ void		check_putstr(void)
 {
 	printf("[------] FT_PUTSTR [------]\n");
 	ft_putstr("[+] a [+]\n");
+	ft_puts("[+] Zaz suce des poneys [+]");
+	ft_puts("[+] Ou plutot, les poneys sucent Zaz [+]");
 	ft_putstr("[+] $#@#',./,~!@~=+ [+]\n");
 	printf("[-] Test with null [-]\n");
 	ft_putstr(NULL);
@@ -391,6 +357,8 @@ void		check_putstr_fd(void)
 {
 	dprintf(2, "[------] FT_PUTSTR_FD [------]\n");
 	ft_putstr_fd("[+] a [+]\n", 2);
+	ft_puts("[+] Zaz suce des poneys [+]");
+	ft_puts("[+] Ou plutot, les poneys sucent Zaz [+]");
 	ft_putstr_fd("[+] $#@#',./,~!@~=+ [+]\n", 2);
 	dprintf(2, "[-] Test with null [-]\n");
 	ft_putstr_fd(NULL, 2);
@@ -403,8 +371,8 @@ void		check_strchr(void)
 
 	str = ft_strdup("Salut");
 	printf("[------] FT_STRCHR [------]\n");
-	printf("     Ret => %p\n", ft_strchr(str, 'a'));
-	printf("Doit Ret => %p\n", strchr(str, 'a'));
+	printf("[+]      Ret => %p [+]\n", ft_strchr(str, 'a'));
+	printf("[+] Doit Ret => %p [+]\n", strchr(str, 'a'));
 	printf("[-] Test with null [-]\n");
 	ft_putstr_fd(NULL, 1);
 	printf("[------] END OF FT_STRCHR [------]\n");

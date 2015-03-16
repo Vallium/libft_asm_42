@@ -14,8 +14,7 @@ _ft_strdup:
 	mov		rbx, rsi
 	push	rdi
 	call	_malloc
-	;jc		_ret
-	cmp		rax, 0
+	cmp		rax, 0x0
 	je		_ret
 
 	pop		rdx
