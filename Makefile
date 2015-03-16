@@ -50,15 +50,16 @@ STATIC_DIR	= static
 DYNAMIC_DIR	= dynamic
 
 CC			= gcc
-NASM		= ~/.brew/bin/nasm -f macho64 # nasm -f macho64 #
 NORMINETTE	= ~/project/colorminette/colorminette
 
 UNAME_S := $(shell uname -s)
 
 ifeq ($(UNAME_S),Linux)
 	FLAGS	= -Wall -Wextra -Werror -Wno-unused-result
+	NASM	= nasm -f macho64
 else
 	FLAGS	= -Wall -Wextra -Werror
+	NASM	= ~/.brew/bin/nasm -f macho64 # nasm -f macho64 #
 endif
 
 $(shell mkdir -p $(STATIC_DIR) $(DEBUG_DIR)) # $(DYNAMIC_DIR))
