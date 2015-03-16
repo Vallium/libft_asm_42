@@ -14,10 +14,15 @@ _ft_strdup:
 	mov		rbx, rsi
 	push	rdi
 	call	_malloc
+	cmp		rax, 0
+	je		_fail_ret
 
 	pop		rdx
 	mov		rdi, rax
 	mov		rsi, rbx
 	call	_ft_memcpy
 
+	ret
+
+_fail_ret:
 	ret
