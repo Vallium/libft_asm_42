@@ -32,7 +32,8 @@ SRC			=	ft_isdigit.s		\
 				ft_putstr.s			\
 				ft_putstr_fd.s		\
 				ft_putchar.s		\
-				ft_putchar_fd.s
+				ft_putchar_fd.s		\
+				ft_cat.s
 
 DYNAMIC_OBJ	= $(patsubst %.s,$(DYNAMIC_DIR)/%.o,$(SRC))
 STATIC_OBJ	= $(patsubst %.s,$(STATIC_DIR)/%.o,$(SRC))
@@ -45,7 +46,7 @@ STATIC_DIR	= static
 DYNAMIC_DIR	= dynamic
 
 CC			= gcc
-NASM		= nasm -f macho64 # ~/.brew/bin/nasm -f macho64 #
+NASM		= ~/.brew/bin/nasm -f macho64 # nasm -f macho64 #
 NORMINETTE	= ~/project/colorminette/colorminette
 
 UNAME_S := $(shell uname -s)
@@ -85,6 +86,9 @@ $(DEBUG_DIR)/%.o: $(SRC_DIR)/%.s
 # 	$(NASM) -fPIC -I $(HEAD_DIR) -o $@ -c $< # $(FLAGS)
 
 .PHONY: clean fclean re norme
+
+bin: all
+	gcc -o ASM_test main.c $(STATIC_LIB)
 
 norme:
 	@$(NORMINETTE) $(SRC_DIR)/ $(HEAD_DIR)/

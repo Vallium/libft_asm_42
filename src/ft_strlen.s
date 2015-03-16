@@ -5,6 +5,8 @@ global	_ft_strlen
 section	.text
 
 _ft_strlen:
+	cmp		rdi, 0x0
+	je		_ret
 	mov		rax, 0
 	mov		rcx, -1
 
@@ -13,4 +15,6 @@ _ft_strlen:
 
 	not		rcx
 	lea		rax, [rcx - 1]
+
+_ret:
 	ret
