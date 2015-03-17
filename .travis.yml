@@ -7,7 +7,7 @@ install:
   - sudo apt-get install nasm
 
 script:
-  - make
   - make debug
+  - make
   - make bin
   - ./ASM_test
