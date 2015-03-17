@@ -37,18 +37,18 @@ _ret:
 	ret
 
 _ret_null:
-	push	"(nul"
+	push	"(nu"
 	mov		rsi, rsp
 	mov		rdi, STDOUT
-	mov		rdx, 4
+	mov		rdx, 3
 	mov		rax, M_SCALL(WRITE)
 
 	syscall
 
-	push	"l)"
+	push	"ll)"
 	mov		rsi, rsp
 	mov		rdi, STDOUT
-	mov		rdx, 2
+	mov		rdx, 3
 	mov		rax, M_SCALL(WRITE)
 
 	syscall
