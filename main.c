@@ -187,7 +187,14 @@ void		check_strlen(void)
 	printf("[------] FT_STRLEN [------]\n");
 	printf("[+] %s, sized: %d [+]\n", str, (int)ft_strlen(str));
 	printf("[+] %s, sized: %d [+]\n", str2, (int)ft_strlen(str2));
-
+	if (strlen("djksajdklsajdklsajdklasjdklasjdklsajdklsajdklsajdklsajdklsajkldjsakldjsakldjsakldjklsajdsdhsadjhaskdhjkashdkjsahdahdkjshdkjashdkjashdkashdkjashdkjashdakjsdhaskdjhasdkjashdkajshdkajshdaksjdhsakjhdkjhasd") == ft_strlen("djksajdklsajdklsajdklasjdklasjdklsajdklsajdklsajdklsajdklsajkldjsakldjsakldjsakldjklsajdsdhsadjhaskdhjkashdkjsahdahdkjshdkjashdkjashdkashdkjashdkjashdakjsdhaskdjhasdkjashdkajshdkajshdaksjdhsakjhdkjhasd"))
+		puts("[+] Test long len OK. [+]");
+	else
+		puts("[+] Test long len DOWN! [+]");
+	if (ft_strlen("") == strlen(""))
+		puts("[+] Test empty string OK. [+]");
+	else
+		puts("[+] Test empty string DOWN! [+]");
 	printf("[+] Test with NULL [+]\n");
 	printf("[+] sized: %d [+]\n", (int)ft_strlen(0));
 	printf("[------] END OF FT_STRLEN [------]\n");
