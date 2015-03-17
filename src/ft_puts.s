@@ -16,7 +16,7 @@ section	.text
 
 _ft_puts:
 	cmp		rdi, 0x0
-	je		_ret_null
+	je		_null
 
 	push	rdi
 	call	_ft_strlen
@@ -28,6 +28,17 @@ _ft_puts:
 
 	syscall
 
+	jmp		_ret
+
+_null:
+	lea		rsi, [rel null.string]
+	mov		rdi, STDOUT
+	mov		rdx, 6
+	mov		rax, M_SCALL(WRITE)
+
+	syscall
+
+_ret:
 	push	10
 	mov		rsi, rsp
 	mov		rdi, STDOUT
@@ -37,23 +48,4 @@ _ft_puts:
 	syscall
 
 	pop rax
-	ret
-
-_ret_null:
-	lea		rsi, [rel null.string]
-	mov		rdi, STDOUT
-	mov		rdx, 6
-	mov		rax, M_SCALL(WRITE)
-
-	syscall
-
-	push	10
-	mov		rsi, rsp
-	mov		rdi, STDOUT
-	mov		rdx, 1
-	mov		rax, M_SCALL(WRITE)
-
-	syscall
-
-	pop		rax
 	ret
