@@ -187,7 +187,7 @@ void		check_strlen(void)
 	printf("[------] FT_STRLEN [------]\n");
 	printf("[+] %s, sized: %d [+]\n", str, (int)ft_strlen(str));
 	printf("[+] %s, sized: %d [+]\n", str2, (int)ft_strlen(str2));
-	if (strlen("djksajdklsajdklsajdklasjdklasjdklsajdklsajdklsajdklsajdklsajkldjsakldjsakldjsakldjklsajdsdhsadjhaskdhjkashdkjsahdahdkjshdkjashdkjashdkashdkjashdkjashdakjsdhaskdjhasdkjashdkajshdkajshdaksjdhsakjhdkjhasd") == ft_strlen("djksajdklsajdklsajdklasjdklasjdklsajdklsajdklsajdklsajdklsajkldjsakldjsakldjsakldjklsajdsdhsadjhaskdhjkashdkjsahdahdkjshdkjashdkjashdkashdkjashdkjashdakjsdhaskdjhasdkjashdkajshdkajshdaksjdhsakjhdkjhasd"))
+	if (strlen("djksajdklsajdklsajdklasjdklasjdklsajdklsajdklsajdklsajdklsajkldjsakldjsakldjsakldjklsajdsdhsadjhaskdhjkashdkjsahdahdkjshdkjashdkjashdkashdkjashdkjashdakjsdhaskdjhasdkjashdkajshdkajshdaksjdhsakjhdkjhasddjksajdklsajdklsajdklasjdklasjdklsajdklsajdklsajdklsajdklsajkldjsakldjsakldjsakldjklsajdsdhsadjhaskdhjkashdkjsahdahdkjshdkjashdkjashdkashdkjashdkjashdakjsdhaskdjhasdkjashdkajshdkajshdaksjdhsakjhdkjhasd") == ft_strlen("djksajdklsajdklsajdklasjdklasjdklsajdklsajdklsajdklsajdklsajkldjsakldjsakldjsakldjklsajdsdhsadjhaskdhjkashdkjsahdahdkjshdkjashdkjashdkashdkjashdkjashdakjsdhaskdjhasdkjashdkajshdkajshdaksjdhsakjhdkjhasddjksajdklsajdklsajdklasjdklasjdklsajdklsajdklsajdklsajdklsajkldjsakldjsakldjsakldjklsajdsdhsadjhaskdhjkashdkjsahdahdkjshdkjashdkjashdkashdkjashdkjashdakjsdhaskdjhasdkjashdkajshdkajshdaksjdhsakjhdkjhasd"))
 		puts("[+] Test long len OK. [+]");
 	else
 		puts("[+] Test long len DOWN! [+]");
