@@ -96,8 +96,8 @@ bin: all
 	@gcc -Wl,-no_pie -o ASM_test main.c $(STATIC_LIB)
 	@echo "ASM_test compiled!"
 
-norme:
-	@$(NORMINETTE) $(SRC_DIR)/ $(HEAD_DIR)/
+# norme:
+#	@$(NORMINETTE) $(SRC_DIR)/ $(HEAD_DIR)/
 
 clean:
 	@rm -f $(STATIC_OBJ) $(DYNAMIC_OBJ) $(DEBUG_OBJ)
