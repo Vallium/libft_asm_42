@@ -28,6 +28,6 @@ _ret_not_find:
 	mov		rax, 0x0
 	ret
 
-_ret
+_ret:
 	mov		rax, rdi
 	ret

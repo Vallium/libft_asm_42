@@ -43,5 +43,5 @@ _ft_puts_fd:
 
 	pop rax
 
-_ret
+_ret:
 	ret
