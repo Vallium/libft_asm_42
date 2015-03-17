@@ -7,6 +7,11 @@
 global	_ft_puts
 extern	_ft_strlen
 
+section	.data
+
+null:
+	.string	db	"(null)"
+
 section	.text
 
 _ft_puts:
@@ -32,23 +37,12 @@ _ft_puts:
 	syscall
 
 	pop rax
-
-_ret:
 	ret
 
 _ret_null:
-	push	"(nu"
-	mov		rsi, rsp
+	lea		rsi, [rel null.string]
 	mov		rdi, STDOUT
-	mov		rdx, 3
-	mov		rax, M_SCALL(WRITE)
-
-	syscall
-
-	push	"ll)"
-	mov		rsi, rsp
-	mov		rdi, STDOUT
-	mov		rdx, 3
+	mov		rdx, 6
 	mov		rax, M_SCALL(WRITE)
 
 	syscall
@@ -62,6 +56,4 @@ _ret_null:
 	syscall
 
 	pop		rax
-	pop		rdx
-	pop		rsi
 	ret
