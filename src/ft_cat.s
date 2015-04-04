@@ -32,7 +32,7 @@ _ft_cat:
 _cat:
 	push	rdi
 
-	mov		rsi, buff
+	lea		rsi, [rel buff]
 	mov		rdx, BUFF_SIZE
 	mov		rax, M_SCALL(READ)
 	syscall

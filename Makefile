@@ -59,7 +59,7 @@ ifeq ($(UNAME_S),Linux)
 	NASM	= nasm -f macho64
 else
 	FLAGS	= -Wall -Wextra -Werror
-	NASM	= ~/.brew/bin/nasm -f macho64 # nasm -f macho64 #
+	NASM	= nasm -f macho64 #
 endif
 
 $(shell mkdir -p $(STATIC_DIR) $(DEBUG_DIR)) # $(DYNAMIC_DIR))
